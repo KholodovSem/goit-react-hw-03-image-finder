@@ -1,7 +1,5 @@
 import ContentLoader from 'react-content-loader';
 import { Component } from 'react';
-import { toast } from 'react-toastify';
-import PropTypes from 'prop-types';
 import ImageGalleryItem from './ImageGalleryItem';
 import Btn from '../Button/Button';
 import style from './ImageGallery.module.css';
@@ -23,7 +21,7 @@ class ImageGallery extends Component {
 
   async componentDidUpdate(prevProps, prevState, snapshot) {
     const { require } = this.props;
-    const { page, images } = this.state;
+    const { page } = this.state;
 
     if (prevProps.require !== require) {
       this.setState({ status: 'pending', images: [] });
