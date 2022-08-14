@@ -1,5 +1,6 @@
 import ContentLoader from 'react-content-loader';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import ImageGalleryItem from './ImageGalleryItem';
 import Btn from '../Button/Button';
 import style from './ImageGallery.module.css';
@@ -51,9 +52,9 @@ class ImageGallery extends Component {
     this.setState((prevState) => ({ page: prevState.page += 1 }));
   };
 
-  onClickToImage = (e) => {
+  onClickToImage = (e, imagePath) => {
     e.preventDefault();
-    const largeImage = e.currentTarget.href;
+    const largeImage = imagePath;
     const alt = e.currentTarget.getAttribute('alt');
 
     this.setState({
@@ -88,7 +89,6 @@ class ImageGallery extends Component {
     }
 
     if (status === 'resolved') {
-      console.log(this.state.modal.largeImage);
       return (
         <section>
           <ul className={style.gallery}>
@@ -103,6 +103,9 @@ class ImageGallery extends Component {
   }
 }
 
+ImageGallery.propTypes = {
+  require: PropTypes.string.isRequired
+}
 
 export default ImageGallery;
 

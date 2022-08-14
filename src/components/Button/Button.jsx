@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import style from './Button.module.css';
+import PropTypes from 'prop-types';
 
 function Btn({onLoadMore}) {
   return (
@@ -7,4 +8,9 @@ function Btn({onLoadMore}) {
   );
 }
 
+Btn.propTypes = {
+  onLoadMore: PropTypes.func.isRequired
+}
+
 export default Btn;
+
