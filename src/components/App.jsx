@@ -3,7 +3,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Component } from 'react';
 import SearchBar from './SearchBar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-import PropTypes from 'prop-types';
 
 export class App extends Component {
   state = {
@@ -25,8 +24,4 @@ export class App extends Component {
       </main>
     );
   }
-}
-
-App.propTypes = {
-  require: PropTypes.string
 }

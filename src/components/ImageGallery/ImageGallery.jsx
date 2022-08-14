@@ -49,7 +49,7 @@ class ImageGallery extends Component {
   }
 
   loadMore = () => {
-    this.setState((prevState) => ({ page: prevState.page += 1 }));
+    this.setState((prevState) => ({ page: prevState.page + 1 }));
   };
 
   onClickToImage = (e, imagePath) => {
